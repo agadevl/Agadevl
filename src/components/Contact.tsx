@@ -1,4 +1,4 @@
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export const Contact = () => {
   return (
@@ -35,6 +35,16 @@ export const Contact = () => {
               >
                 +39 351 753 9367
               </a>
+            </div>
+
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <MapPin className="w-6 h-6 text-primary" />
+                <h3 className="text-xl font-semibold text-foreground">Location</h3>
+              </div>
+              <p className="text-lg text-muted-foreground block pl-9">
+                Sondrio, Italy
+              </p>
             </div>
           </div>
 
