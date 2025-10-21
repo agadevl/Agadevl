@@ -1,73 +1,42 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Mail, Send } from "lucide-react";
-import { toast } from "sonner";
+import { Mail, Phone } from "lucide-react";
 
 export const Contact = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success("Message sent successfully! 🎉");
-    setFormData({ email: "", message: "" });
-  };
-
   return (
     <section id="contact" className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-12 gradient-text">
-          Contact Me 📬
+          Contact Details
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Contact Form */}
-          <form onSubmit={handleSubmit} className="space-y-6 animate-fade-in">
-            <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium text-foreground flex items-center gap-2">
-                <Mail className="w-4 h-4 text-primary" />
-                Your Mail 📧
-              </label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="your.email@example.com"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-                className="bg-card border-border focus:border-primary"
-              />
+          {/* Contact Information */}
+          <div className="space-y-8 animate-fade-in">
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <Mail className="w-6 h-6 text-primary" />
+                <h3 className="text-xl font-semibold text-foreground">Email</h3>
+              </div>
+              <a 
+                href="mailto:afraoua@live.fr" 
+                className="text-lg text-muted-foreground hover:text-primary transition-colors duration-300 block pl-9"
+              >
+                afraoua@live.fr
+              </a>
             </div>
 
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-sm font-medium text-foreground flex items-center gap-2">
-                <Send className="w-4 h-4 text-primary" />
-                Your Message 💌
-              </label>
-              <Textarea
-                id="message"
-                placeholder="Write your message here..."
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                required
-                rows={6}
-                className="bg-card border-border focus:border-primary resize-none"
-              />
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <Phone className="w-6 h-6 text-primary" />
+                <h3 className="text-xl font-semibold text-foreground">Phone</h3>
+              </div>
+              <a 
+                href="tel:+393517539367" 
+                className="text-lg text-muted-foreground hover:text-primary transition-colors duration-300 block pl-9"
+              >
+                +39 351 753 9367
+              </a>
             </div>
-
-            <Button
-              type="submit"
-              size="lg"
-              className="w-full bg-gradient-to-r from-primary to-amber-400 hover:opacity-90 text-accent-foreground font-semibold"
-            >
-              <Send className="mr-2 h-5 w-5" />
-              SEND
-            </Button>
-          </form>
+          </div>
 
           {/* Illustration */}
           <div className="flex justify-center items-center animate-scale-in">
